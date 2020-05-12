@@ -16,6 +16,10 @@ class Album
     @@albums.values()
   end
 
+  def search
+    
+  end
+
   def save
     @@albums[self.id] = Album.new(self.name, self.id, self.year, self.genre, self.artist)
   end

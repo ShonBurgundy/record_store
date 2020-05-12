@@ -11,9 +11,10 @@ _A mock record store webpage_
 
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
-| **Program will create a new album with a name and year** | User Input: **"Blue", "2000"** | Output: |
-| **Program will create a new album with a name, year and genre** | User Input: **"Blue", "2000", "Rock"**| Output: |
-| **Program will create a new album with a name, year, genre and artist** | User Input: **"Blue", "2000", "Rock","Chee"**| Output:  |
+| **Program will create a new album with a name and year** |**"Blue", "2000"** |  |
+| **Program will create a new album with a name, year and genre** | **"Blue", "2000", "Rock"**|  |
+| **Program will create a new album with a name, year, genre and artist** | **"Blue", "2000", "Rock","Chee"**|  |
+| **Program will search an album by name** | **"Blue"**| **album with info**  |
 
 
 ## Setup/Installation Requirements
