@@ -22,7 +22,7 @@ post('/albums') do
   album = Album.new(name, nil)
   album.save()
   @albums = Album.all()
-  erb(:albums)
+  erb(:albums) 
 end
 
 get('/albums/:id') do
