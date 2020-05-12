@@ -1,11 +1,11 @@
 class Album
   attr_reader :id, :year, :genre, :artist
   attr_accessor :name
-  @@albums = {}
+  @@albums = {} #hash
   @@total_rows = 0
 
   def initialize(name, id, year, genre, artist)
-    @name = name
+    @name = name.downcase()
     @id = id || @@total_rows += 1
     @year = year.to_i
     @genre = genre
@@ -13,11 +13,11 @@ class Album
   end
 
   def self.all
-    @@albums.values()
+    @@albums.values() #array
   end
 
-  def search
-    
+  def self.search(name)
+    self.all.select{| album | album.name.include?(name.downcase)}
   end
 
   def save

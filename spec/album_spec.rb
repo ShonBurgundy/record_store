@@ -77,7 +77,23 @@ describe '#Album' do
       album.save()
       album2 = Album.new("Blue", nil, "2005", "rock", "Shon")
       album2.save()
-      expect(Album.search("Giant Steps")).to(eq(album1))
+      expect(Album.search("Giant Steps")).to(eq([album]))
+    end
+    it("searches for album by name") do
+      album = Album.new("Giant Steps", nil, "2000", "punk", "Chee")
+      album.save()
+      album2 = Album.new("Blue", nil, "2005", "rock", "Shon")
+      album2.save()
+      expect(Album.search("steps")).to(eq([album]))
+    end
+    it("searches for album by name") do
+      album = Album.new("Giant Steps", nil, "2000", "punk", "Chee")
+      album.save()
+      album2 = Album.new("Blue", nil, "2005", "rock", "Shon")
+      album2.save()
+      album3 = Album.new("Blue steps", nil, "2005", "rock", "Shon")
+      album3.save()
+      expect(Album.search("steps")).to(eq([album, album3]))
     end
   end
 end
