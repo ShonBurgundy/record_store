@@ -2,6 +2,7 @@ class Album
   attr_reader :id, :year, :genre, :artist
   attr_accessor :name
   @@albums = {} #hash
+  @@sold_albums = {}
   @@total_rows = 0
 
   def initialize(name, id, year, genre, artist)
@@ -14,6 +15,20 @@ class Album
 
   def self.all
     @@albums.values() #array
+  end
+
+  def self.all_sold
+    @@sold_albums.values() #array
+  end
+
+  def sold
+    delete
+    @@sold_albums[self.id] = Album.new(self.name, self.id, self.year, self.genre, self.artist)
+  end
+
+  def self.format
+    self.all.sort_by{| album | album.name }
+    # @@albums.sort()
   end
 
   def self.search(name)

@@ -4,6 +4,7 @@ require('./lib/album')
 require('pry')
 also_reload('lib/**/*.rb')
 
+# make home page
 get('/') do
   @albums = Album.all
   erb(:albums)
@@ -13,7 +14,7 @@ get('/albums') do
   if (params[:search])
     @albums = Album.search(params[:search])
   else
-    @albums = Albums.all
+    @albums = Album.format
   end
   erb(:albums)
 end
@@ -32,6 +33,11 @@ post('/albums') do
   @albums = Album.all()
   erb(:albums) 
 end
+
+post('/albums') do
+  erb(:purchase)
+end
+
 
 get('/albums/:id') do
   @album = Album.find(params[:id].to_i())
@@ -61,6 +67,8 @@ delete('/albums/:id') do
   @albums = Album.all
   erb(:albums)
 end
+
+
 
 # get('/') do
 #   "This will be our home page. '/' is always the root route in a Sinatra application."

@@ -16,6 +16,7 @@ _A mock record store webpage_
 | **Program will create a new album with a name, year, genre and artist** | **"Blue", "2000", "Rock","Chee"**|  |
 | **Program will search an album by name** | **"Blue"**| **album with info**  |
 | **Program will sort all albums in alphabetical order** | **"Blue","Dog","Car"**| **"Blue","Car", "Dog"**  |
+| **Program will store sold albums in @@sold_albums remove them from @@albums** |**...**| **...**|
 
 
 

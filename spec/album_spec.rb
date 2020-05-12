@@ -99,12 +99,29 @@ describe '#Album' do
 
   describe('.sort') do
     it("sort all albums in alphabetical order") do
+      album = Album.new("Blue", nil, "2000", "punk", "Chee")
+      album.save()
+      album2 = Album.new("Dog", nil, "2005", "rock", "Shon")
+      album2.save()
+      album3 = Album.new("Car", nil, "2005", "rock", "Shon")
+      album3.save()
+      album4 = Album.new("Apple", nil, "2003", "rock", "Chee")
+      album4.save()
+      expect(Album.format).to(eq([album4, album, album3, album2]))
+    end
+  end
+
+  describe('#sold') do
+    it("lists sold albums") do
       album = Album.new("Giant Steps", nil, "2000", "punk", "Chee")
       album.save()
       album2 = Album.new("Blue", nil, "2005", "rock", "Shon")
       album2.save()
-      album.delete()
-      expect(Album.all).to(eq([album2]))
+      album3 = Album.new("Car", nil, "2005", "rock", "Shon")
+      album3.save()
+      album.sold
+      expect(Album.all).to(eq([album2,album3]))
+      expect(Album.all_sold).to(eq([album]))
     end
   end
 end
