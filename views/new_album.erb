@@ -1,9 +1,16 @@
 <h1>Add a new album</h1>
 
 <form action="/albums" method="post">
-  <div class="form-group">
+<div class="row">
+  <div class="form-group col-sm-6">
     <label for="album_name">Album Name</label>
     <input id="n" name="album_name" class="form-control" type="text">
-  </div>  
+  </div>
+
+  <div class="form-group col-sm-6">
+    <label for="album_year">Album Year</label>
+    <input id="y" name="album_year" class="form-control" type="text">
+  </div>
+</div>
   <button type="submit" class="btn">Go!</button>
-</form>  
+</form>
