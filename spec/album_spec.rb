@@ -96,4 +96,15 @@ describe '#Album' do
       expect(Album.search("steps")).to(eq([album, album3]))
     end
   end
+
+  describe('.sort') do
+    it("sort all albums in alphabetical order") do
+      album = Album.new("Giant Steps", nil, "2000", "punk", "Chee")
+      album.save()
+      album2 = Album.new("Blue", nil, "2005", "rock", "Shon")
+      album2.save()
+      album.delete()
+      expect(Album.all).to(eq([album2]))
+    end
+  end
 end

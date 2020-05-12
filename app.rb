@@ -38,10 +38,10 @@ get('/albums/:id') do
   erb(:album)
 end
 
-get('/albums?search=:name') do
-  @album = Album.search(params[:name])
-  erb(:album)
-end  
+# get('/albums?search=:name') do
+#   @album = Album.search(params[:name])
+#   erb(:album)
+# end  
 
 get('/albums/:id/edit') do
   @album = Album.find(params[:id].to_i())
