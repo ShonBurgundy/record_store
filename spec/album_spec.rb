@@ -9,9 +9,9 @@ describe '#Album' do
 
   describe('#save') do
     it("saves an album") do
-      album = Album.new("Giant Steps", nil)
+      album = Album.new("Giant Steps", nil, "2000")
       album.save()
-      album2 = Album.new("Blue", nil)
+      album2 = Album.new("Blue", nil, )
       album2.save()
       expect(Album.all).to(eq([album, album2]))
     end
